@@ -23,7 +23,10 @@ RUN swift package resolve
 COPY . .
 
 # Build everything, with optimizations and test discovery
-RUN swift build --enable-test-discovery -c release
+RUN swift build -c release --enable-test-discovery \
+    -Xlinker --no-keep-files-mapped \
+    -Xlinker --no-map-whole-files \
+    -Xlinker --no-mmap-output-file
 
 # Switch to the staging area
 WORKDIR /staging
