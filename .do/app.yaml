@@ -1,0 +1,11 @@
+name: sample-vapor
+services:
+- dockerfile_path: Dockerfile
+  github:
+    branch: master
+    deploy_on_push: true
+    repo: digitalocean/sample-vapor
+  http_port: 8080
+  name: sample-vapor
+  routes:
+  - path: /
