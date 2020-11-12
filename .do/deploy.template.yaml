@@ -1,10 +1,7 @@
-name: sample-vapor
-services:
-- dockerfile_path: Dockerfile
-  git:
-    branch: main
-    repo_clone_url: https://github.com/digitalocean/sample-vapor.git
-  http_port: 8080
-  name: sample-vapor
-  routes:
-  - path: /
+spec:
+ name: sample-vapor
+ services:
+ - name: web
+   git:
+     branch: master
+     repo_clone_url: https://github.com/digitalocean/sample-vapor.git
